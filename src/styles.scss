@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import './assets/global';
+
 // GLOBAL STYLES
 
 .app-btn {
@@ -13,4 +15,28 @@
 
 body {
   font-family: Roboto, sans-serif;
+  color: $black;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  display: block;
+  margin: 0 auto;
+  max-width: 44rem;
+  padding: 1rem 4rem;
+  background: rgb(239, 242, 247);
+  box-shadow: -1px 1px 0px 1px #10101030;
 }

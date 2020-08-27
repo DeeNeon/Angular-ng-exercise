@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'ng-e-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+    selector: 'ng-e-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
-  constructor() {}
+export class HomeComponent {
+    isLoggedIn: boolean;
 
-  ngOnInit() {}
+    userStatus(event: boolean) {
+        this.isLoggedIn = event;
+    }
 }

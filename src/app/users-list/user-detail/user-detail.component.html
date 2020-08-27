@@ -1,0 +1,23 @@
+<main>
+  <a [routerLink]="['users-list']">Back</a>
+  <section>
+    <ng-container *ngIf="user$ | async as user; else loading">
+      <div class="top-box"></div>
+      <img [src]="user.data.avatar" [alt]="user.data.first_name">
+      <div class="bottom-box">
+        <blockquote>
+          <p>{{user.ad.text}}</p>
+        </blockquote>
+        <div class="details">
+          <h1>{{user.data.first_name}} {{user.data.last_name}}</h1>
+          <a href="mailto:{{user.data.email}}" target="_blank">{{user.data.email}}</a>
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #loading>
+<!--      <div class="mock-container">-->
+        <span class="sr-only" id="loading"></span>
+<!--      </div>-->
+    </ng-template>
+  </section>
+</main>

@@ -1,0 +1,16 @@
+<main>
+  <section>
+    <h1>User's List</h1>
+    <ng-container *ngIf="usersList$ | async as usersList; else loading">
+      <ol class="gradient-list" >
+        <li *ngFor="let user of usersList; trackBy: track" [routerLink]="[user.id]">
+          <img [src]="user.avatar" [alt]="user.first_name">
+          <span>{{user.first_name}} {{user.last_name}}</span>
+        </li>
+      </ol>
+    </ng-container>
+    <ng-template #loading>
+      <span class="sr-only" id="loading"></span>
+    </ng-template>
+  </section>
+</main>

@@ -1,0 +1,41 @@
+@import '../../assets/global.scss';
+h1 {
+  text-align: center;
+}
+
+.gradient-list {
+  counter-reset: counter;
+  list-style: none;
+  padding: 0;
+
+  > li {
+    border-radius: 2.5rem 0.5rem 0.5rem 2.5rem;
+    cursor: pointer;
+    background: white;
+    @extend %boxshadow;
+    margin-top: .5rem;
+    height: 3.25rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    img {
+      width: 60px;
+      border-radius: 50px;
+    }
+
+    span {
+      margin-left: 1.5rem;
+    }
+
+    &:hover::after {
+      content: url(../../assets/images/link.svg);
+      right: 15px;
+      position: absolute;
+      width: 20px;
+    }
+    + li {
+      margin-top: 1rem;
+    }
+  }
+}
